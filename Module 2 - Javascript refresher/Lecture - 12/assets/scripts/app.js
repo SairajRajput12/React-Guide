@@ -5,6 +5,8 @@ import { xz } from "./Lec_18_Functions.js";
 import { text } from "./Lec_19_Arrow_Function.js";
 import { text20 } from "./Lec_20_Objects_And_Classes.js";
 import { text21 } from "./Lec_21_Arrays.js";
+import { x22 } from "./Lec_22_ArrayDestructuring.js";
+import { x23 } from "./Lec_23_SpreadOperator.js";
 // import  top_secreate  from "../scripts/main.js"  -> not like this
 
 // Lecture 15: export and import 
