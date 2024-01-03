@@ -24,6 +24,12 @@ header {
   margin: 3rem 0;
 }
 
+#image{
+  height: 5rem; 
+  width: 5rem; 
+  object-fit: cover;
+}
+
 header img {
   height: 5rem;
   width: 10rem;
