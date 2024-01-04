@@ -5,11 +5,17 @@ import jsx from './assets/jsx-ui.png'
 import { CORE_CONCEPTS } from './data';
 import Header from './components/Header.jsx'; 
 import CoreConcept from './components/CoreConcepts.jsx';
+import TabButton from './components/TabButton.jsx';
 // Lecture 41 Dynamic content genration: 
 function App() {
+
+  function handleClick(){
+    console.log('Hello World !!');   
+  }
+
   return (
     <div>
-      <Header />
+      <Header /> 
       <main>
         <section id="core-concepts">
         <h2>Core Concepts</h2> 
@@ -23,8 +29,26 @@ function App() {
           <CoreConcept {...CORE_CONCEPTS[1]}/>  
           <CoreConcept {...CORE_CONCEPTS[2]}/>  
           <CoreConcept {...CORE_CONCEPTS[3]}/>  
+          
+          {/* {Lecture 48: Component customisation special children prop} */} 
+          
 
         </ul>
+        </section>
+        <section id="examples"> 
+            <h2>Examples</h2> 
+            <menu> 
+
+              {/* used to create the list of the buttons */} 
+              {/* <TabButton>Components</TabButton> this statement ignored by react when you pass the text between opening and closing tag of the react */}
+              <TabButton >JSX</TabButton> 
+              <TabButton >Props</TabButton> 
+              <TabButton >State</TabButton> 
+            </menu>
+            {/* lecture 50: passing functions as values to props, as i passed the handleClick function is passed as a value to the props */} 
+             {/*In the tab TabButton.jsx file the function is passed as a value to the onClick events  */}
+              <TabButton onSelect={handleClick}>Components</TabButton> 
+            Dynamic Content
         </section>
       </main>
     </div>
