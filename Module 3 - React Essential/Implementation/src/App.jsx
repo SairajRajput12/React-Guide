@@ -18,12 +18,12 @@ function App() {
       <>
           < Navbar /> 
           <div id='main'>
-          <h1 onClick={display}><b>{title} </b></h1>
           <img src={Img} alt="hai" />
+          <h1 onClick={display}><b>{title} </b></h1>
           </div> 
           <br /> 
           {/* <h1 style={{textAlign:'center',color:'yellow'}}><b>What are the features we are offering to you ??</b></h1> */}
-          <div>
+          <div id='bully'>
               <h1 style={{textAlign:'center'}}><b>What features we are offering ??</b></h1>
               <ul style={{ display: 'flex', flexDirection: 'row',margin:'5px',padding: '2rem','border-radius': '6px','flex-wrap': 'wrap',
       'justify-content': 'center','gap':'2rem'}}>

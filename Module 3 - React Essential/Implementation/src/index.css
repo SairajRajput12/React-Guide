@@ -2,16 +2,17 @@
 
 * {
   box-sizing: border-box;
-  font-family: 'Comic Neue', cursive;
+  /* font-family: 'Comic Neue', cursive; */
+  font-family: 'Open Sans', sans-serif;
 }
 
 #main {
   display: flex; /* Set display to flex */
-  flex-direction: column; /* Arrange children vertically */
+  flex-direction: row; /* Arrange children vertically */
   align-items: center; /* Center children horizontally */
   justify-content: center; /* Center children vertically */
   background-color: black;
-  height: 250px;
+  height: 150px;
   width: 550px;
   margin: 50px auto 0;
   border-radius: 20px 10px 5px 15px; /* Shortened syntax for border-radius */
@@ -19,9 +20,10 @@
 
 h1 {
   color: yellow;
-  margin: 0 0 1.5rem 0;
+  margin:  0 1.5rem 0;
   line-height: 3.5;
   font-size: 32px;
+  text-align: center;
 }
 
 body {
@@ -60,4 +62,11 @@ img {
 
 #feature p {
   font-size: 0.9rem;
+}
+
+#bully{
+  background-color: #181818; 
+  margin-left: 5%; 
+  margin-right: 5%;
+
 }
