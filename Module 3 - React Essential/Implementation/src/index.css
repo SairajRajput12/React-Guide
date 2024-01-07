@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: 'Comic Neue', cursive;
+}
+
+#main {
+  display: flex; /* Set display to flex */
+  flex-direction: column; /* Arrange children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
+  background-color: black;
+  height: 250px;
+  width: 550px;
+  margin: 50px auto 0;
+  border-radius: 20px 10px 5px 15px; /* Shortened syntax for border-radius */
+}
+
+h1 {
+  color: yellow;
+  margin: 0 0 1.5rem 0;
+  line-height: 3.5;
+  font-size: 32px;
+}
+
+body {
+  background-color: #2c2c2c;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+  display: block;
+  margin: auto;
+}
+
+
+#feature {
+  width: 15rem;
+  text-align: center;
+  background-color: black;
+  color: yellow;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow:15px 15px 0px rgba(0, 0, 0, 0.2);
+}
+
+#feature img {
+  margin : 14 rem;
+  height: 6 rem;
+  margin-top: 15px;
+  margin: 5 2 1.5rem 0;
+  width: 10 rem;
+  object-fit: cover;
+}
+
+#feature h3 {
+  margin: 0.5rem 0;
+}
+
+#feature p {
+  font-size: 0.9rem;
+}
