@@ -8,7 +8,13 @@ import todoAppFeatures from './feature';
 
 function App() {
     const [title,setTitle] = useState("To-do application"); 
+    const [isSlidingIn, setIsSlidingIn] = useState(true);
     const arr = ["explore our website","visit one more time","your time will be saved","this is for you sir","24/7 available"]
+    
+    const handleToggleSlide = () => {
+      setIsSlidingIn(!isSlidingIn);
+    };
+
     function display(){
        var num = Math.floor(Math.random()*(arr.length)); 
        setTitle(arr[num]); 
@@ -39,6 +45,8 @@ function App() {
               <Card key={index} {...item} />
             ))}
           </ul>
+
+          
       </>
     )
   }
