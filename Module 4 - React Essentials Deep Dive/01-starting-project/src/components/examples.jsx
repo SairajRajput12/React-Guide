@@ -80,7 +80,12 @@ export default function Examples(){
       {/* the id is not automatically forwarded to the custom components */}
       {/* we should add it to using props */}
       {/* the styles will be loss beacuse the jsx treats them as a props */}
-      <Tabs buttons={<><TabButton
+
+
+      <Tabs 
+      buttonsContainer="menu"  // builtin components identifier must be passed as a string and custom component must be pass as a variable value 
+      buttons={
+      <><TabButton
           isSelected={selectedTopic === 'components'}
           onSelect={() => handleClick('components')}
         >
