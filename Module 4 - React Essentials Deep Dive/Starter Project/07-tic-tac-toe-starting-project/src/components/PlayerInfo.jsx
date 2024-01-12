@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function PlayerInfo({playerName,playerSign}){
+export default function PlayerInfo({playerName,playerSign,isActive}){
 
 // Lecture 74: Exercise time: 
     const [edit,setEdit] = useState(false); 
@@ -15,17 +15,18 @@ export default function PlayerInfo({playerName,playerSign}){
 
     function handleChange(event){
         console.log(event); 
+        console.log(isActive); 
         setName(event.target.value);
     }
 
     let playerName1 = <span className="player-name">{name}</span>;  
-    let buttonCaption = 'Edit';
+    // let buttonCaption = 'Edit';
     if(edit){
         playerName1 = <input type="text" required value={name} onChange={handleChange}/>; 
     }
 
     return(
-        <li>
+        <li className={(isActive === true) ? 'active' : undefined}>
             <span className="player">
                 {playerName1}
                 <span className="player-symbol">{Sign}</span>
