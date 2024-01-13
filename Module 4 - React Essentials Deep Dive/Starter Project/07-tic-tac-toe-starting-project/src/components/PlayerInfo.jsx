@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function PlayerInfo({playerName,playerSign,isActive}){
+export default function PlayerInfo({playerName,playerSign,isActive,onChangeName}){
 
 // Lecture 74: Exercise time: 
     const [edit,setEdit] = useState(false); 
@@ -11,6 +11,9 @@ export default function PlayerInfo({playerName,playerSign,isActive}){
     function setE(){
         // using function gurrantees to the react that you will work with the latest state value
         setEdit(editing => !editing); 
+        if(edit){
+            onChangeName(playerSign,name); 
+        }
     }
 
     function handleChange(event){
