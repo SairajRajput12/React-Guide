@@ -5,7 +5,7 @@ export default function PlayerInfo({playerName,playerSign,isActive,onChangeName}
 // Lecture 74: Exercise time: 
     const [edit,setEdit] = useState(false); 
     const [name,setName] = useState(playerName);
-    let Name = playerName; 
+    // let Name = playerName; 
     let Sign = playerSign; 
 
     function setE(){
@@ -17,8 +17,8 @@ export default function PlayerInfo({playerName,playerSign,isActive,onChangeName}
     }
 
     function handleChange(event){
-        console.log(event); 
-        console.log(isActive); 
+        // console.log(event); 
+        // console.log(isActive); 
         setName(event.target.value);
     }
 
