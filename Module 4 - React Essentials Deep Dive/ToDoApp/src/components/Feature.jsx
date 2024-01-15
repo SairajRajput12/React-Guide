@@ -1,7 +1,9 @@
-import Feature1 from './assets/F1.jpg'; 
-import Feature2 from './assets/F2.jpg'; 
-import Feature3 from './assets/F3.jpg'; 
-import Feature4 from './assets/F4.jpg'; 
+import Feature1 from '../assets/F1.jpg';
+import Feature2 from '../assets/F2.jpg'; 
+import Feature3 from '../assets/F3.jpg'; 
+import Feature4 from '../assets/F4.jpg'; 
+
+
 
 
 const todoAppFeatures = [

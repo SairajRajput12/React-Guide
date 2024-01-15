@@ -1,5 +1,6 @@
 
-export default function GameBoard({handleButtonClick,gameBoard}){
+export default function GameBoard({handleButtonClick,gameBoard}){ 
+    console.log('Game board component executed succesfully');
     return(
         <ol id="game-board">
             {gameBoard.map((array,rowIndex) => (

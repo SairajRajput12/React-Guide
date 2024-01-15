@@ -13,6 +13,8 @@ export default function Players({playerName,playerSign,changePlayerName,isActive
         }
     }
 
+    console.log('Players component executed succesfully!! with player name => ',playerCurrName);
+
     function handleChange(event){
         setPlayerCurrName(event.target.value);
     }

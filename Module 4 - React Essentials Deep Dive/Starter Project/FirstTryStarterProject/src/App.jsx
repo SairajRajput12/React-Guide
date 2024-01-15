@@ -75,6 +75,8 @@ function App() {
       });
   }
 
+  console.log('app component executed ');
+
   
 
   function handleButtonClick(rowIndex,colIndex){
