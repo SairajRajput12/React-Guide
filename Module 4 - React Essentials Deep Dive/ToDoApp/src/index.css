@@ -1,6 +1,8 @@
 body {
     margin: 0;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Nunito Sans', sans-serif; 
+    background-color:#555
+    /* background-color: rgb(19, 18, 18); */
   }
 
 
@@ -52,13 +54,14 @@ nav a:hover {
 
 .intro{
     /* background-color: rgba(0, 0, 0, 0.692); */ 
-    background-color: darkblue;
+    background-color:#2c2c2c;
     padding: 60px;
     margin: 55 px;
     color: white;
     text-align: center;  
     font-size: 28px;
-    font-weight: bold;
+    font-weight: bold; 
+    border: 1px solid white;
     /* background-image: url('./assets/Intro4.jpg');
     background-size: cover;
     background-position: center center;
@@ -112,7 +115,7 @@ nav a:hover {
     font-size: 20px;
   }
 
-  .create,.delete {
+  .create,.delete,.deleteCard,.createCard {
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
@@ -122,7 +125,7 @@ nav a:hover {
     cursor: pointer;
     border: 2px solid #3498db;
     color: #ffffff;
-    background-color: #3498db;
+    background-color:#2c2c2c;
     border-radius: 5px;
     transition: background-color 0.3s ease; 
     margin: 5px; 
@@ -134,19 +137,33 @@ nav a:hover {
     background-color: #2980b9;
   }
 
-  .delete:hover {
+  .deleteCard:hover {
     background-color: #2980b9;
+  }
+
+  .createCard:hover{
+    background-color: #2980b9;
+  }
+  .deleteCard{
+    margin-left: 80px;
+    background-color: #2c2c2c;
+  }
+
+  .createCard{
+    margin-left: 110px; 
+    background-color: #2c2c2c;
   }
 
 
 
   .Cards{
-    background-color: skyblue; 
+    background-color: #2c2c2c;
     margin: 20px; 
-    height: 400px; 
+    height: 500px; 
     width: 350px;
     align-items: center;
     border-radius: 10px; 
+    color: white;
   }
 
   .CardBox{

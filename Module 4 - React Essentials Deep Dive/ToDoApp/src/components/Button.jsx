@@ -1,8 +1,8 @@
-export default function Button(){
+export default function Button({insert}){
     return(
        <div className="clickable">
-            <button className="create">Create Note</button>
-            <button className="delete">Remove Note</button>
+            <button onClick={insert} className="create">Create Note</button>
+
        </div>
     );
 }
