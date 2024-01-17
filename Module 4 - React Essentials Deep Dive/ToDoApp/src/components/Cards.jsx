@@ -133,7 +133,7 @@ export default function Cards({data,handleChange,updateData,updateDataDes,update
                     <button className="createCard" onClick={() => editGo(index)}>{( id==index && editG) ? "Save" : "Edit"}</button> 
                     {(editD && (id == index)) ? descriptionContent : <p style={{marginLeft:'15px'}}>{value.description}</p>}
                     <button className="createCard" style={{marginBottom:"19px"}} onClick={() => editDesc(index)}>{( id==index && editD) ? "Save" : "Edit"}</button> 
-                    <button className="deleteCard" onClick={() => deleteCard(index)}>Remove Note</button>
+                    <button className="deleteCard" onClick={() => deleteCard(index)} style={{marginLeft:'95px'}}>Remove Note</button>
                 </div>
             ))}
         </>
