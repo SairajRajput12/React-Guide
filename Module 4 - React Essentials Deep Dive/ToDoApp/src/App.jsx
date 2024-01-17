@@ -16,9 +16,7 @@ const greet = 'Welcome to this application'
 export default function App(){ 
   const [cardData,setCardData] = useState([]); 
   
-  function handleChange(event,id){
-    setTitle(event.target.value); 
-  }
+  
 
   function insertCardData(){
     console.log('function has been invoked');
@@ -26,7 +24,7 @@ export default function App(){
         let title = 'Title'; 
         let goal = 'Goal'; 
         let description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quia hic deserunt cupiditate ullam, architecto velit maiores eligendi provident rem maxime laboriosam consequatur blanditiis officia esse dicta illum tempore amet?'; 
-        let updatedData = [{title:title,goal:goal,description:description},...previous]; 
+        let updatedData = [...previous,{title:title,goal:goal,description:description}]; 
         return updatedData; 
     });
 
@@ -34,7 +32,43 @@ export default function App(){
   }
 
   // update title heading: 
-  
+  function updateData(index=0,title1='Title'){
+    // updating the title
+    let data = [...cardData]; 
+      // Update the title property
+    data[index].title = title1;   
+    setCardData(data); 
+
+  }
+  // updating the description
+  function updateDataDes(des,index){
+      setCardData((prevData) => {
+        let data = prevData; 
+        data[index].description = des; 
+        return data; 
+      });
+
+      console.log(cardData); 
+  }
+
+
+  function updateDataGoal(des,index){
+    setCardData((prevData) => {
+      let data = prevData; 
+      data[index].goal = des; 
+      return data; 
+    });
+
+    console.log(cardData); 
+  }
+
+  function removeCard(index){
+      setCardData((prevData) => {
+        let data = prevData; 
+        data.splice(index,1); 
+        return data; 
+      })
+  }
 
 
   return(
@@ -46,7 +80,7 @@ export default function App(){
         </div>
         <Button insert={insertCardData}/>
         <div className='CardBox'>
-          <Cards data={cardData} setCardData={setCardData} />
+          <Cards data={cardData} setCardData={setCardData} updateData={updateData} updateDataDes={updateDataDes} updateDataGoal={updateDataGoal} removeCard={removeCard}/>
         </div>
       </>
   );
