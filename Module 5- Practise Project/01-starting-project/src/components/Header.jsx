@@ -1,7 +1,10 @@
-export default function Header({Img}){
+import Img from '../assets/investment-calculator-logo.png'
+
+
+export default function Header(){
     return(
-        <header id="header">
-            <img src={Img} alt='Investment png'/>
+        <header id="header"> 
+            <img src={Img} alt='Money Bag'/>
             <h1>React Investment Calculator</h1> 
         </header>
     );

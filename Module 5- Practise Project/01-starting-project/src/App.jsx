@@ -1,41 +1,35 @@
-import { useState } from 'react'
-import Img from './assets/investment-calculator-logo.png'
-import Header from './components/Header'
-import UserInput from './components/UserInput'
-import Result from './components/Result'
+import { useState } from "react"
+import Header from "./components/Header"
+import UserInput from "./components/UserInput"
+import Result from "./components/Result";
 
-function App() { 
 
-    const [obj,setObj] = useState({
-      initialInvestment : 10000, 
-      annualInvestment : 1200, 
-      expectedReturn:6, 
-      duration:12, 
-  })
+function App() {
+  const [data,setData] = useState({
+      initialInvestment:10000, 
+      annualInvestment:1200,
+      expectedReturn:6,
+      duration:12,
+  }); 
 
-  const inputIsValid = obj.duration >= 1;
-
+  const isValid = (data.duration > 0) ? true : false; 
 
   function handleChange(identifier,newValue){
-      setObj((prevData) => {
-          return{
-              ...prevData, 
-              [identifier] :+newValue, 
-          };
-          // event.target.value always returns value in the form of the string 
-          // so by adding + will convert the string into the value
-      }); 
+      setData((prevData) => {
+        return{
+          ...prevData, 
+          [identifier] :+newValue, 
+        };
+      })
   }
 
-
-
+  console.log(data); 
   return (
     <>
-      <Header Img={Img}/> 
-      <UserInput onChange={handleChange} userInput={obj} />
-      {/* this is a table */}  
-      {!obj && <p>Please enter a duration greater than zero.</p>}
-      {obj && <Result data={obj}/>}
+      <Header />
+      <UserInput data={data} handleChange={handleChange} /> 
+      {!isValid && <p style={{alignContent:'center'}}>Please enter the valid duration</p>}
+      {isValid && <Result data={data}/>}
     </>
   )
 }
