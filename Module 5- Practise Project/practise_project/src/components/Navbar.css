@@ -1,0 +1,27 @@
+nav{
+    display: flex;
+    color: white; 
+    /* background-color: black; */
+    /* background-color: purple; */
+    height: 60px; 
+    justify-content: center; 
+  }
+  
+  a{
+    margin: 18px; 
+    padding: 30px; 
+    padding-top: 5px; 
+    font-size: 25px; 
+    margin-top: 15px;  
+    height: 4px;
+    color: purple; 
+    cursor: pointer;
+  }
+
+  nav a:hover {
+    background-color: purple; 
+    color: white; 
+    border-radius: 4px 4px 4px 4px; 
+    height: 2px;
+
+  }
