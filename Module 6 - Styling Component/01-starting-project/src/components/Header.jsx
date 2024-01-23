@@ -1,6 +1,8 @@
 import logo from '../assets/logo.png';
 import classes from './Header.module.css';  // scoping css rules with css modules -> Lecture 111 
 
+
+
 export default function Header() {
   return (
     <header>
