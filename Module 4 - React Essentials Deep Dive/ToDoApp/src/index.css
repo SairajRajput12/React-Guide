@@ -164,6 +164,7 @@ nav a:hover {
     align-items: center;
     border-radius: 10px; 
     color: white;
+    border: 1.1px solid #3498db;
   }
 
   .CardBox{
