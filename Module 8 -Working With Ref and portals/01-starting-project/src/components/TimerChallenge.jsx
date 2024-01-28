@@ -15,41 +15,60 @@ export default function TimerChallenge({title,targetTime}){
         -> while the react make sure that each ref get stored behind the scenes and ensures that they do not get lost. 
         -> in this way the refs work. 
     */
-    const [timer,setTimer] = useState(false); 
-    const [timerStarted,setTimerStarted] = useState(false);  
+    // const [timer,setTimer] = useState(false); 
+    // const [timerStarted,setTimerStarted] = useState(false);  
+    const [timeRemaining,setTimeRemaining] = useState(targetTime*1000); 
+    const timeIsActive = timeRemaining > 0 && timeRemaining < targetTime * 1000; 
+    if(timeRemaining <= 0){
+        clearInterval(time.current); 
+        dialog.current.open(); 
+    }
+
+    function handleReset(){
+        setTimeRemaining(targetTime*1000);  
+    }
 
     function handleStart(){
-        time.current = setTimeout(()=>{
-            setTimer(true); 
-            dialog.current.open(); // this is the builtin method. which is used to show the dialog tag
-        },1000*targetTime); 
+        // time.current = setTimeout(()=>{
+        //     setTimer(true); 
+        //     dialog.current.open(); // this is the builtin method. which is used to show the dialog tag
+        // },1000*targetTime); 
 
-        setTimerStarted(true); 
+        // now we will use the setInterval function beacuse the setInterval executes it's parameter function every second. 
+        // while set timedout executes it's function at the end of the time interval
+        time.current = setInterval(() => {
+            setTimeRemaining((prevTimeRemaining) => (prevTimeRemaining - 10));
+
+        },10); // function executes on each 10 milli seconds
+
+
+        // setTimerStarted(true); 
     }
 
     function stopTimer(){
+        dialog.current.open(); 
         clearTimeout(time.current); 
     }
 
     return(
         <>
-            <ResultModal ref={dialog} targetTime={targetTime} result="lost" /> 
+            <ResultModal ref={dialog} targetTime={targetTime} result="lost" timeRemaining={timeRemaining} onReset={handleReset} /> 
             {/* Lecture 139: Forwarding the ref directly will give the error that we cannot forward the ref directly to the react component. we have to use the special function called the forward ref */} 
             
             <section className="challenge">
                 <h1>{title}</h1>
-                {timer && <p>You Lost</p>}
+                {/* {timer && <p>You Lost</p>} */}
                 <p className="challenge-time">
                     {targetTime} second {targetTime > 1 ? 's' : ''}
                 </p>
                 <p>
-                    <button onClick={timerStarted ? stopTimer : handleStart}>
-                        {timerStarted ? 'Stop ' : 'Start '} challenge
+                    <button onClick={timeIsActive ? stopTimer : handleStart}>
+                        {timeIsActive ? 'Stop ' : 'Start '} challenge
                     </button>
                 </p>
 
-                <p className={timerStarted ? 'active' : undefined}>
-                    {timerStarted ? 'Timer is running' : 'Timmer is inactive'}
+                <p className={timeIsActive ? 'active' : undefined}>
+                    {timeIsActive ? 'Timer is running' : 'Timmer is inactive'}
                 </p>
             </section>
         </>
