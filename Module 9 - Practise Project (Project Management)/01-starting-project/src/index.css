@@ -125,11 +125,12 @@ body{
 }
 
 .display-project-details h1{
+
     margin-top: 40px;
     font-size: 50px;
 }
 
-.display-project-details p{
+.display-project-details div{
     font-size: 18px; 
     word-spacing: 4px;
     color: gray
@@ -211,10 +212,11 @@ body{
     font-size: 23px;
 }
 
-
-.tasks li{
+.tasks ul li {
     width: 94%;
 }
+
+
 
 /* designing scroll bar */ 
 ::-webkit-scrollbar {
@@ -409,4 +411,14 @@ nav a:hover {
     margin-top: 14px; 
     margin-bottom: 14px;
     font-size: 19px;
+}
+
+.lists{
+    width: 94%;
+    display: flex; 
+    justify-content: space-between;
+}
+
+.lists button{
+    margin-right: 34px;
 }

@@ -1,40 +1,35 @@
-export default function AddTasks(){
+export default function AddTasks({data,index}){
+
+    console.log(data[index].tasks); 
     return(
         <div className="project-panel">
-            <p className="display-project-details">
-               <p className="button-and-title"> 
-                  <h1 style={{color:"black"}}>Title</h1>
+            <div className="display-project-details">
+               <div className="button-and-title"> 
+                  <h1 style={{color:"black"}}>{data[index].title}</h1>
                   <button>Delete</button>
-               </p>
-               <p>Dec 29, 2024</p>
-               <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. At exercitationem quae doloremque, accusamus nulla placeat aut nisi unde quaerat! Autem accusantium soluta vel velit delectus, necessitatibus ea nemo ipsam inventore praesentium error. Non nesciunt et vero inventore voluptatum ipsa eos, optio illo perspiciatis consequuntur delectus. Blanditiis repellendus iure consequuntur quas.</h2> 
-            </p>
-            <p className="add-tasks">
-                <h1>Tasks</h1>
-                <p className="input">
+               </div>
+               <div>{data[index].date}</div>
+               <h2>{data[index].Description}</h2> 
+            </div>
+            <div className="add-tasks">
+            <h1>Tasks</h1>
+                <div className="input">
                   <input type="text" />
                   <button>Add Tasks</button>
-                </p>
-                <p className="display-tasks">
-                  <ul>
-                    <p className="tasks">
-                        <li>Hello</li> 
-                        <button>clear</button>
-                    </p>
-
-                    <p className="tasks">
-                        <li>Hello</li> 
-                        <button>clear</button>
-                    </p>
-
-                    <p className="tasks">
-                        <li>Hello</li> 
-                        <button>clear</button>
-                    </p>
-                    
-                  </ul>
-                </p>
-            </p>
+                </div>
+                <div className="display-tasks">
+                    <div >
+                        <ul>
+                            {data[index].tasks.map((value, index) => (
+                                <li className="lists" key={index}>
+                                    {value}
+                                    <button>clear</button>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
       
     )
