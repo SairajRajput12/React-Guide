@@ -3,7 +3,7 @@ export default function AddTasks(){
         <div className="project-panel">
             <p className="display-project-details">
                <p className="button-and-title"> 
-                  <h1>Title</h1>
+                  <h1 style={{color:"black"}}>Title</h1>
                   <button>Delete</button>
                </p>
                <p>Dec 29, 2024</p>
