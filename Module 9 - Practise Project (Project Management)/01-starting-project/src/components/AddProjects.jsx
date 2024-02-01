@@ -1,9 +1,9 @@
-export default function AddProjects(){
+export default function AddProjects({setShowProject,SaveProject}){
     return(
         <div className="project-panel">
             <p className="buttons">
-              <button className="h11">Cancel</button> 
-              <button>Save</button>
+              <button className="h11" onClick={setShowProject}>Cancel</button> 
+              <button onClick={() => SaveProject('1','2','3')}>Save</button>
             </p>
             <div className="m">
                 <label className="title">Title</label> 

@@ -122,6 +122,7 @@ body{
     /* background-color: aqua; */
     height: 260px; 
     border-bottom: 2px solid gray;
+    
 }
 
 .display-project-details h1{
@@ -133,7 +134,11 @@ body{
 .display-project-details div{
     font-size: 18px; 
     word-spacing: 4px;
-    color: gray
+    color: gray;
+    margin-top: 50px;
+    margin-left: 5px;
+    overflow-y: auto;
+    max-height: 600px;
 }
 
 .display-project-details h2{
@@ -158,6 +163,13 @@ body{
     background-color: rgb(167, 166, 166); 
     border-radius: 3px;
     width: 450px;
+}
+
+.n1{
+    margin-top: 50px;
+    margin-left: 5px;
+    overflow-y: auto;
+    max-height: 390px;
 }
 
 .input{

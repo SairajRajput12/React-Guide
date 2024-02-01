@@ -1,5 +1,6 @@
-export default function ProjectList({projectData,data,handleShowProjectDetails}){
-    const arr = data.map((value,index) => (data[index].title)); 
+export default function ProjectList({projectData,data,handleShowProjectDetails,showAddProject}){
+    const arr = (data.length > 0) ? data.map((value,index) => (data[index].title)) : ['Nothing to Show']; 
+    console.log(arr); 
     const styleWhenNoObjectFound = {
         backgroundColor: 'black',
         width: '500px',
@@ -12,7 +13,7 @@ export default function ProjectList({projectData,data,handleShowProjectDetails})
         <>
             <div className="projectDisplaying">
                 <h1>Your Projects</h1>
-                <button className="add-project">+ Add Project</button>
+                <button className="add-project" onClick={showAddProject}>+ Add Project</button>
                 <div style={projectData.length == 0 ? styleWhenNoObjectFound : undefined} className={projectData.length == 0 ? undefined : 'project-list'}>
                     <ul >
                         {arr.map((value,index) => (<li onClick={() => handleShowProjectDetails(index)} key={index}>{value}</li>))}
