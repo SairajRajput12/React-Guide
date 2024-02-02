@@ -1,0 +1,130 @@
+
+/* styling user project panel */ 
+.project-panel{
+    width: 1280px;
+    margin-right: 40px;
+    margin-left: 50px;
+    margin-top: 40px; 
+    display: flex;
+    flex-direction: column;
+    text-align: left; 
+    flex-wrap: wrap;
+}
+
+
+
+
+.display-project-details{
+    /* background-color: aqua; */
+    height: 260px; 
+    border-bottom: 2px solid gray;
+    flex-wrap: wrap;
+}
+
+.display-project-details h1{
+
+    margin-top: 40px;
+    font-size: 50px;
+}
+
+.display-project-details div{
+    font-size: 18px; 
+    word-spacing: 4px;
+    color: gray;
+    margin-top: 50px;
+    margin-left: 5px;
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+.display-project-details h2{
+    margin-top: 17px; 
+    font-size: 18px;
+}
+
+
+.add-tasks{
+    margin-top: 25px;
+    height: 75px; 
+    /* background-color: aqua; */
+
+}
+
+.add-tasks h1{
+    font-size: 40px; 
+}
+
+.add-tasks input{
+    margin-top: 14px;
+    border: 2px solid blue; 
+    background-color: rgb(167, 166, 166); 
+    border-radius: 3px;
+    width: 450px;
+}
+
+
+.n1{
+    margin-top: 50px;
+    margin-left: 5px;
+    overflow-y: auto;
+    max-height: 390px;
+}
+
+.input{
+    display: flex;
+    flex-direction: row; 
+    
+}
+
+.input button{
+    width: 140px; 
+    border-radius: 3px; 
+    color: black; 
+    margin-top: 13px;
+    font-size: 20px;
+}
+
+.display-tasks li{
+    font-size: 18px; 
+    margin-top: 18px;
+    height: 45px;
+    padding-left: 13px;
+    padding-right: 0px;
+    padding-top: 39px;
+    padding-bottom: 56px;
+    border-radius: 8px;
+}
+
+.display-tasks li:hover{
+    color: black; 
+    background-color:rgb(236, 233, 233);
+}
+
+
+.button-and-title{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.button-and-title button{
+    color: black;
+    font-size: 21px;
+}
+
+.tasks{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.tasks button{
+    font-size: 23px;
+}
+
+.tasks ul li {
+    width: 94%;
+}
+

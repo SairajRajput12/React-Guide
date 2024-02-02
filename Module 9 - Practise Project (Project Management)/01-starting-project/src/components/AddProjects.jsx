@@ -1,17 +1,26 @@
+import { useRef } from "react"
+
+
 export default function AddProjects({setShowProject,SaveProject}){
+    const title = useRef(); 
+    const desc = useRef(); 
+    const dueDate = useRef(); 
+    // console.log(title.current.value); 
+    // console.log(desc.current.value); 
+    // console.log(dueDate.current.value); 
     return(
         <div className="project-panel">
             <p className="buttons">
               <button className="h11" onClick={setShowProject}>Cancel</button> 
-              <button onClick={() => SaveProject('1','2','3')}>Save</button>
+              <button onClick={() => SaveProject(title.current.value,desc.current.value,dueDate.current.value)}>Save</button>
             </p>
             <div className="m">
                 <label className="title">Title</label> 
-                <input type="text" className="title-input"></input>
+                <input ref={title} type="text" className="title-input"></input>
                 <label className="title">Description</label> 
-                <input type="text" className="title-input"></input>
+                <input ref={desc} type="text" className="title-input"></input>
                 <label className="title">Due Date</label> 
-                <input type="date" className="title-input" ></input>
+                <input ref={dueDate} type="date" className="title-input" ></input>
             </div>
         </div>
     )

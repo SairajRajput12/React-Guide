@@ -66,12 +66,13 @@ function App() {
     setData(dat); 
   }
   
-  function addtasks(index){
+  function addtasks(index,value){
     const dat = [...data]; 
-    dat[index].tasks.push('this is aurther'); 
+    dat[index].tasks.push(value); 
     setData(dat); 
     console.log(data); 
   }
+  console.log(id);
 
   return (
     <>
@@ -80,9 +81,8 @@ function App() {
       <FencyAnimation />
       <div className="grid">
         {<ProjectList projectData={projectData} showAddProject={showAddProject} data={data} handleShowProjectDetails={handleShowProjectDetails} />}
-        {data.length === 0 && <NoProjectsSelected showAddProject={showAddProject}/>}
         {!showProject && !showAddProjectCompo && <NoProjectsSelected  showAddProject={showAddProject} />}
-        {showProject && data.length > 0 && <AddTasks addtasks={addtasks} data={data} DeleteProject={DeleteProject} clearTask={clearTask} index={id} />} 
+        {showProject && data.length > 0 && data[id] != undefined && <AddTasks addtasks={addtasks} data={data} DeleteProject={DeleteProject} clearTask={clearTask} index={id} />} 
         {showAddProjectCompo && data.length >= 0 && <AddProjects SaveProject={SaveProject}  setShowProject={cancelAddProject} showAddProjectCompo={showAddProjectCompo} />}
       </div>
     </>

@@ -1,0 +1,30 @@
+
+.project-setting{
+    width: 1600px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px; 
+    text-align: center;
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.project-setting h1{
+    font-size: 43px;
+}
+
+.project-setting p{
+    margin-top: 15px;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.project-setting button{
+    background-color: rgb(32, 28, 28); 
+    color: white;
+    height: 50px;
+    width: 200px; 
+    border-radius: 14px;
+    font-size: 20px;
+}

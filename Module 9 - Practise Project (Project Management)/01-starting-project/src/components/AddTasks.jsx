@@ -1,4 +1,11 @@
+// import '../components/AddTasks.css';
+
+import { useRef } from "react"
+
 export default function AddTasks({data,index,DeleteProject,clearTask,addtasks}){
+
+    const task = useRef(); 
+
     return(
         <div className="project-panel">
             <div className="display-project-details">
@@ -6,14 +13,14 @@ export default function AddTasks({data,index,DeleteProject,clearTask,addtasks}){
                   <h1 style={{color:"black"}}>{data[index].title}</h1>
                   <button onClick={() => DeleteProject(index)}>Delete</button>
                </div>
-               <div>{data[index].date}</div>
-               <h2>{data[index].Description}</h2> 
+                <div>{data[index].date}</div>
+                <h2>{data[index].Description}</h2> 
             </div>
             <div className="add-tasks">
             <h1>Tasks</h1>
                 <div className="input">
-                  <input type="text" />
-                  <button onClick={()=>addtasks(index)}>Add Tasks</button>
+                  <input ref={task} type="text" />
+                  <button onClick={()=>addtasks(index,task.current.value)}>Add Tasks</button>
                 </div>
                 <div className="display-tasks">
                     <div className="n1">
