@@ -1,4 +1,4 @@
-// import '../components/ProjectList.css';
+import '../components/ProjectList.css';
 
 export default function ProjectList({projectData,data,handleShowProjectDetails,showAddProject}){
     const arr = (data.length > 0) ? data.map((value,index) => (data[index].title)) : ['Nothing to Show']; 

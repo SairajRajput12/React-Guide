@@ -44,14 +44,16 @@
 
 
 .add-tasks{
-    margin-top: 25px;
+    margin-top: 75px;
     height: 75px; 
     /* background-color: aqua; */
 
 }
 
+
 .add-tasks h1{
-    font-size: 40px; 
+    font-size: 40px;  
+    margin-top: 65px;
 }
 
 .add-tasks input{
@@ -106,6 +108,10 @@
     flex-direction: row; 
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.button-and-title h1{
+    width: 1200px;
 }
 
 .button-and-title button{

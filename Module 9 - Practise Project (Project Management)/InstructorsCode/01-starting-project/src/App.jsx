@@ -3,7 +3,6 @@ import NewProject from "./components/NewProject";
 import NoProjectSelected from "./components/NoProjectSelected";
 import ProjectSidebar from "./components/ProjectSidebar";
 import SelectedProject from "./components/SelectedProject";
-import NewTask from "./components/NewTask";
 
 function App() {
 

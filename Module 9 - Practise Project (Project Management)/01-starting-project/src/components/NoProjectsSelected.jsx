@@ -1,5 +1,5 @@
 import Img from '../assets/no-projects.png'
-// import '../components/NoProjectSelected.css';
+import '../components/NoProjectSelected.css';
 
 export default function NoProjectsSelected({showAddProject}){
     return(

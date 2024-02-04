@@ -1,4 +1,4 @@
-// import '../components/AddTasks.css';
+import '../components/AddTasks.css';
 
 import { useRef } from "react"
 
@@ -17,7 +17,7 @@ export default function AddTasks({data,index,DeleteProject,clearTask,addtasks}){
                 <h2>{data[index].Description}</h2> 
             </div>
             <div className="add-tasks">
-            <h1>Tasks</h1>
+            <h1 className="h1tag" >Tasks</h1>
                 <div className="input">
                   <input ref={task} type="text" />
                   <button onClick={()=>addtasks(index,task.current.value)}>Add Tasks</button>

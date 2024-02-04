@@ -11,13 +11,7 @@ import AddProjects from "./components/AddProjects";
 
 function App() {
   const [data, setData] = useState([
-    { title: 'New App', Description: 'Creating an innovative app for productivity tracking', date: '15 January', tasks: ['Design UI', 'Develop backend', 'Test functionality'] },
-    { title: 'Social Media Analytics Tool', Description: 'Building a tool to analyze social media trends', date: '20 January', tasks: ['Collect data', 'Analyze data', 'Generate reports'] },
-    { title: 'E-commerce Platform Upgrade', Description: 'Enhancing features of an existing e-commerce platform', date: '25 January', tasks: ['Add payment gateway', 'Optimize performance', 'Update security'] },
-    { title: 'Fitness Tracking App', Description: 'Developing an app to track fitness goals and progress', date: '1 February', tasks: ['Track steps', 'Monitor heart rate', 'Record workouts'] },
-    { title: 'Language Learning App', Description: 'Creating an app to facilitate language learning', date: '5 February', tasks: ['Build lesson plans', 'Implement quizzes', 'Integrate speech recognition'] },
-    { title: 'Travel Planner', Description: 'Building a platform to plan and organize travel itineraries', date: '10 February', tasks: ['Search flights', 'Book accommodations', 'Plan activities'] },
-    { title: 'Finance Management Tool', Description: 'Developing a tool to manage personal finances', date: '15 February', tasks: ['Track expenses', 'Set budgets', 'Generate financial reports'] }
+    { title: undefined, Description: undefined, date: undefined, tasks: [] }
   ]);
   
   const [showProject,setShowProject] = useState(false); 
