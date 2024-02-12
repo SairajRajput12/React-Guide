@@ -7,6 +7,7 @@ export default function Navbar({change}){
             <a onClick={() =>change('Home')}>Home</a> 
             <a onClick={() =>change('About')}>About</a> 
             <a onClick={() =>change('Projects')}>Projects</a>
+            <a onClick={() =>change('Contacts')}>Projects</a>
         </nav>
     );
 }
