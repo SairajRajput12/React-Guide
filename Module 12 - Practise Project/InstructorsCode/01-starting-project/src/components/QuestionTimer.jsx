@@ -1,35 +1,34 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from 'react';
 
-export default function QuestionTimer({timeout,onTimeout,mode}){
-    // console.log(mode); 
-    const [remainingTime,setRemainingTime] = useState(timeout); 
-    useEffect(() =>{
-        console.log('SETTING TIMEOUT'); // this function executed again
-        const timer = setTimeout(onTimeout,timeout); 
-        
-        return () => {
-            clearTimeout(timer); 
-        }
-    },[]); 
+export default function QuestionTimer({ timeout, onTimeout, mode }) {
+  const [remainingTime, setRemainingTime] = useState(timeout);
 
-    useEffect(() => {
-        console.log('SETTING INTERVAL'); 
-        const intervale = setInterval(() => {
-            setRemainingTime(prevRemainingTime => prevRemainingTime - 100);
-            // due to react strict mode there are 2 running intervals which leads to complete the progress bar in half of the time. 
-        } ,100);
+  useEffect(() => {
+    console.log('SETTING TIMEOUT');
+    const timer = setTimeout(onTimeout, timeout);
 
-        return() => {
-            clearInterval(intervale); 
-        }
-    },[]); 
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [timeout, onTimeout]);
 
-    // Why the timer not get restarted ?? 
-    // beacuse this given component does not get restarted beacuse it was not the part of dom before and now. 
-    
+  useEffect(() => {
+    console.log('SETTING INTERVAL');
+    const interval = setInterval(() => {
+      setRemainingTime((prevRemainingTime) => prevRemainingTime - 100);
+    }, 100);
 
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
-    return(
-        <progress id="question-time" value={remainingTime}  max={timeout}  className={mode} />
-    );
+  return (
+    <progress
+      id="question-time"
+      max={timeout}
+      value={remainingTime}
+      className={mode}
+    />
+  );
 }

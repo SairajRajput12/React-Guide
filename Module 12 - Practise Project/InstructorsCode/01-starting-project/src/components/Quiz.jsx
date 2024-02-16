@@ -1,16 +1,15 @@
 import { useCallback, useState } from "react";
 import QUESTIONS from '../Question';
-import Img from '../assets/quiz-complete.png'
 import QuestionTimer from "./QuestionTimer";
 import Answers from "./Answers";
 import Question from "./Question";
+import Summary from "./Summary";
 
 
 
 export default function Quiz() {
   // this component is responsible for switching between questions and registering the user answers.
   const [useAnswers, setUserAnswers] = useState([]);
-  const [answerState,setAnswerState] = useState(''); 
   const activeQuestionIndex =  useAnswers.length; // it can be derived from the userAnswersArray 
   const quizIsComplete = activeQuestionIndex === QUESTIONS.length; 
   
@@ -29,20 +28,18 @@ export default function Quiz() {
               return data;     
           }
       );  
+      console.log(useAnswers);
     },[]);
 
 
-  const handleSkipAnswer = useCallback(() =>{
-    () => handleSelectAnswer(null)
-  },[handleSelectAnswer]);
+  const handleSkipAnswer = useCallback(
+     () => handleSelectAnswer(null)
+  ,[handleSelectAnswer]);
 
   if(quizIsComplete)
   {
     return(
-        <div id="summary">
-            <img src={Img} alt="quiz-completed" />
-            <h2>Quiz completed!</h2>
-        </div>
+        <Summary userAnswers={useAnswers} />
     )
   }
 
