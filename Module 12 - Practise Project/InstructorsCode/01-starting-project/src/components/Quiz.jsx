@@ -11,7 +11,7 @@ export default function Quiz() {
   // this component is responsible for switching between questions and registering the user answers.
   const [useAnswers, setUserAnswers] = useState([]);
   const [answerState,setAnswerState] = useState(''); 
-  const activeQuestionIndex = answerState === '' ? useAnswers.length : useAnswers.length-1; // it can be derived from the userAnswersArray 
+  const activeQuestionIndex =  useAnswers.length; // it can be derived from the userAnswersArray 
   const quizIsComplete = activeQuestionIndex === QUESTIONS.length; 
   
   /*
@@ -23,29 +23,12 @@ export default function Quiz() {
     */
 
   const handleSelectAnswer = useCallback(function handleSelectAnswer(selectedAnswer){
-      setAnswerState('answered');
       setUserAnswers(
           (prevData) => {
               const data = [...prevData,selectedAnswer]; 
               return data;     
           }
       );  
-      
-      setTimeout(() => {
-        if(selectedAnswer === QUESTIONS[activeQuestionIndex].answers[0]){
-              setAnswerState('correct'); 
-        }
-        else{
-              setAnswerState('wrong');
-        }
-
-        setTimeout(() => {
-          setAnswerState(''); 
-        },2000); 
-
-      },1000)
-
-
     },[]);
 
 
@@ -63,11 +46,13 @@ export default function Quiz() {
     )
   }
 
+  console.log(activeQuestionIndex)
+
  
 
   return (
     <div id="quiz">
-     <Question key={activeQuestionIndex} questionText={QUESTIONS[activeQuestionIndex].text} answers={QUESTIONS[activeQuestionIndex].answers} onSelectAnswer={handleSelectAnswer} seletedAnswer={useAnswers[useAnswers.length-1]} answerState={answerState} onSkipAnswer={handleSkipAnswer} />
+     <Question key={activeQuestionIndex} index={activeQuestionIndex}  onSelectAnswer={handleSelectAnswer} onSkipAnswer={handleSkipAnswer} />
     </div>
   );
 }
