@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 
 
-export default function QuestionTimer({timer,handleSkipAnswer}){ 
+export default function QuestionTimer({timer,handleSkipAnswer,mode}){ 
     console.log('the quiz timer component executed again ')
+
+    
 
     const [remainingTime, setRemainingTime] = useState(timer);
     useEffect(() => {
@@ -27,6 +29,6 @@ export default function QuestionTimer({timer,handleSkipAnswer}){
 
 
     return(
-        <progress id="question-time" max={timer} value={remainingTime} />
+        <progress id="question-time" max={timer} value={remainingTime} className={mode} />
     )
 }

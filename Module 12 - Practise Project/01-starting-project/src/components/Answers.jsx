@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
 
-export default function Answers({answers,onSelect}){
+export default function Answers({answers,onSelect,answerState,seletectedAnswer}){
     console.log('the answer component executed again ')
 
     const shuffledAnswers = useRef(); 
@@ -17,7 +17,17 @@ export default function Answers({answers,onSelect}){
     return(
         <ol id="answers">
             {shuffledAnswers.current.map((value,index) => {
-                return <li key={index} className="answer" ><button onClick={() => onSelect(value)} >{value}</button></li>
+                let cssClass = '' 
+                const isSelected = seletectedAnswer === value;
+                  if(answerState === 'answered' && isSelected){
+                      cssClass = 'selected'; 
+                  }
+
+                  if((answerState === 'correct' || answerState === 'wrong') && isSelected){
+                      cssClass = answerState; 
+                  }
+
+                return <li key={index} className={"answer"} ><button className={cssClass} onClick={() => onSelect(value)} disabled={answerState !== ''}>{value}</button></li>
             })}
         </ol>
     )

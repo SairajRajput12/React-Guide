@@ -1,9 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react"; 
 import QUESTIONS from '../Question'
-import Img from '../assets/quiz-complete.png'
-import Answers from "./Answers";
-import QuestionTimer from "./QuestionTimer";
 import Question from "./Question";
+import Summary from "./Sumary";
 
 const timer = 15000; 
 export default function Quiz(){
@@ -21,6 +19,7 @@ export default function Quiz(){
                return data;     
            }
        );  
+      // this is used to update the timer. 
        console.log(userAnswers);
      },[]);
 
@@ -34,10 +33,7 @@ export default function Quiz(){
 
     if(quizComplete){
         return(
-            <div id="summary">
-                <h2>Quiz completed</h2>
-                <img src={Img} alt="quiz is completed"></img>
-            </div>
+            <Summary userAnswers={userAnswers} />
         )
     }
 
