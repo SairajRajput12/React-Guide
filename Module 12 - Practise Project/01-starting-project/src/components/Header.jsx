@@ -3,8 +3,8 @@ import Img from '../assets/quiz-logo.png'
 export default function Header(){
     return(
         <header>
-            <img src={Img} alt='quiz-logo' ></img>
-            <h1>React Quiz</h1>
+            <h1>I am Loki</h1>
+            <img src={Img} alt='i am loki' />
         </header>
     )
 }
