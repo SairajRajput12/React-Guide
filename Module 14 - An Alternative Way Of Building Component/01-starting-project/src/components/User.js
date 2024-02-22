@@ -7,6 +7,11 @@ class User extends Component{
   //   // helps in initialisation work
   // }
 
+  componentWillUnmount(){
+    console.log("User will unmount !!!")
+    // this is equivalent to the cleanup function of the useEffect it will run 3 times beacuse we have rendered the component 3 times. 
+  }
+
   render(){
     return <li className={classes.user}>{this.props.name}</li>;
   }
