@@ -1,7 +1,6 @@
 import fs from 'node:fs/promises';
-
-import bodyParser from 'body-parser';
 import express from 'express';
+import bodyParser from 'body-parser';
 
 const app = express();
 
