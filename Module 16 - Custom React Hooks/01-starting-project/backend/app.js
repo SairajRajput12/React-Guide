@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import express from 'express';
 
 const app = express();
-
+const port = process.env.PORT || 3000;
 app.use(express.static('images'));
 app.use(bodyParser.json());
 
@@ -50,4 +50,6 @@ app.use((req, res, next) => {
   res.status(404).json({ message: '404 - Not Found' });
 });
 
-app.listen(3000);
+app.listen(port, () => {
+  console.log(`no god the man in the sky listening at http://localhost:${port}`);
+});
