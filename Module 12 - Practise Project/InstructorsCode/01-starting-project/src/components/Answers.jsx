@@ -1,10 +1,10 @@
 import { useRef } from "react";
-import QUESTIONS from '../Question';
 
 export default function Answers({answers,seletectedAnswer,answerState,onSelect}){
     const  shuffledAnswers = useRef(); 
 
     if(!shuffledAnswers.current){
+        console.log(shuffledAnswers.current); 
         shuffledAnswers.current = [...answers]; 
         shuffledAnswers.current.sort(()=>{
           // -1; // swapping of element takes place. 

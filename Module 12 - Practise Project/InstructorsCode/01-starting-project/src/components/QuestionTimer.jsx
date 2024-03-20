@@ -8,6 +8,7 @@ export default function QuestionTimer({ timeout, onTimeout, mode }) {
     const timer = setTimeout(onTimeout, timeout);
 
     return () => {
+      console.log('cleared timer function');
       clearTimeout(timer);
     };
   }, [timeout, onTimeout]);
@@ -19,6 +20,7 @@ export default function QuestionTimer({ timeout, onTimeout, mode }) {
     }, 100);
 
     return () => {
+      console.log('cleared interval function');
       clearInterval(interval);
     };
   }, []);

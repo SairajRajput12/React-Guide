@@ -22,6 +22,7 @@ export default function Quiz() {
     */
 
   const handleSelectAnswer = useCallback(function handleSelectAnswer(selectedAnswer){
+    console.log('the handle select answer exeuted again')
       setUserAnswers(
           (prevData) => {
               const data = [...prevData,selectedAnswer]; 
