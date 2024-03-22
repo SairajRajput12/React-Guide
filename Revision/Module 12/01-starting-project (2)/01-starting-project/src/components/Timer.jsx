@@ -2,18 +2,18 @@ import { useEffect, useState } from "react"
 
 
 
-export default function Timer({value,mode,onTimeout}){
-    const [remainingTime,setRemainingTime] = useState(value); 
+export default function Timer({timeout,mode,onTimeout}){
+    const [remainingTime,setRemainingTime] = useState(timeout); 
 
     useEffect(() => {
         console.log('SETTING TIMEOUT');
-        const timer = setTimeout(onTimeout, value);
+        const timer = setTimeout(onTimeout, timeout);
     
         return () => {
           console.log('cleared timer function');
           clearTimeout(timer);
         };
-      }, [value, onTimeout]);
+      }, [timeout, onTimeout]);
 
       useEffect(() => {
         console.log('SETTING INTERVAL');
@@ -30,6 +30,6 @@ export default function Timer({value,mode,onTimeout}){
 
 
     return(
-        <progress id="question-time" max={value} value={remainingTime} className={mode} />
+        <progress id="question-time" max={timeout} value={remainingTime} className={mode} />
     )
 }
